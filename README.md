@@ -25,7 +25,7 @@ Once you found your categories, you need to use OID (Open Images Dataset) Toolki
 
 You need to clone the OID Toolkit repository, open a Windows Powershell command window and type in the following command. Make sure you first cd in the OID Toolkit folder:
 
-  python3 main.py downloader --classes 'Airplane' 'Person' 'Land Vehicle' --type_csv train --multiclasses 1 --limit 6000
+    python3 main.py downloader --classes 'Airplane' 'Person' 'Land Vehicle' --type_csv train --multiclasses 1 --limit 6000
 
 This will download 6000 images of airplanes, 6000 of people and 6000 images of Land Vehicles. If you only need a class, skip the '--multiclasses 1' bit. Also, change the limit to whatever you find appropriate for your application.
 
