@@ -33,7 +33,7 @@ This will download 6000 images of airplanes, 6000 of people and 6000 images of L
 
 Then, after the download is finished, run the following command in the same folder:
 
-  python convert_annotations.py
+      python convert_annotations.py
 
 This will convert the annotations in the format that is used by the YOLO models.
 
@@ -41,12 +41,12 @@ This will convert the annotations in the format that is used by the YOLO models.
 
 You also need to convert the annotations into the type used by Faster R-CNN and SSD. For that, copy and paste the generate-tfrecord.py file in the OID Toolkit folder. Then, you need to open an anaconda terminal, cd into the OID Toolkit folder, and run the following command:
 
-  python generate-tfrecord.py \
-  --classes_file=./OIDv4_ToolKit/classes.txt \
-  --class_descriptions_file=./OIDv4_ToolKit/OID/csv_folder/class-descriptions-boxable.csv \
-  --annotations_file=./OIDv4_ToolKit/OID/csv_folder/train-annotations-bbox.csv \
-  --images_dir=./OIDv4_ToolKit/OID/Dataset/train \
-  --output_file=./train.tfrecord
+      python generate-tfrecord.py \
+      --classes_file=./OIDv4_ToolKit/classes.txt \
+      --class_descriptions_file=./OIDv4_ToolKit/OID/csv_folder/class-descriptions-boxable.csv \
+      --annotations_file=./OIDv4_ToolKit/OID/csv_folder/train-annotations-bbox.csv \
+      --images_dir=./OIDv4_ToolKit/OID/Dataset/train \
+      --output_file=./train.tfrecord
 
 A new file, train.tfrecord will be generated. 
 
@@ -54,16 +54,16 @@ A new file, train.tfrecord will be generated.
 
 Steps 1.2 to 1.4. need to be repeated for test images. First, open Powershell, cd into the OID Toolkit folder, and run this:
 
-  python3 main.py downloader --classes 'Airplane' 'Person' 'Land Vehicle' --type_csv test --multiclasses 1 --limit 4000
-  python convert_annotations.py
+      python3 main.py downloader --classes 'Airplane' 'Person' 'Land Vehicle' --type_csv test --multiclasses 1 --limit 4000
+      python convert_annotations.py
 
 Then, in your anaconda prompt, run this:
 
-  python generate-tfrecord.py \
-  --classes_file=./OIDv4_ToolKit/classes.txt \
-  --class_descriptions_file=./OIDv4_ToolKit/OID/csv_folder/class-descriptions-boxable.csv \
-  --annotations_file=./OIDv4_ToolKit/OID/csv_folder/test-annotations-bbox.csv \
-  --images_dir=./OIDv4_ToolKit/OID/Dataset/test \
-  --output_file=./test.tfrecord
+      python generate-tfrecord.py \
+      --classes_file=./OIDv4_ToolKit/classes.txt \
+      --class_descriptions_file=./OIDv4_ToolKit/OID/csv_folder/class-descriptions-boxable.csv \
+      --annotations_file=./OIDv4_ToolKit/OID/csv_folder/test-annotations-bbox.csv \
+      --images_dir=./OIDv4_ToolKit/OID/Dataset/test \
+      --output_file=./test.tfrecord
 
 Now, all your images are downloaded and converted for the models.
